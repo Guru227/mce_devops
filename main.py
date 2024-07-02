@@ -6,7 +6,7 @@ from division import divide
 def main():
     print("Simple Calculator Program")
     
-    a = 444
+    a = 555
     b = 333
     
     print(f"Addition of {a} and {b}: {add(a, b)}")
