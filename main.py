@@ -6,8 +6,9 @@ from division import divide
 def main():
     print("Simple Calculator Program")
     
-    a = 10
-    b = 5
+
+    a = 3
+    b = 4
     
     print(f"Addition of {a} and {b}: {add(a, b)}")
     print(f"Subtraction of {a} and {b}: {subtract(a, b)}")
@@ -16,3 +17,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#it is multi div
+
+#it is from div branch
+
