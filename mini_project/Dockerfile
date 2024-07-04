@@ -4,10 +4,11 @@ FROM node:14 AS build
 WORKDIR /app
 
 COPY . .
-RUN npm install
 WORKDIR /app/client
 RUN npm install
 RUN npm run build
+WORKDIR /app
+RUN npm install
 
 # COPY client/package.json ./client/
 # COPY client/ ./
@@ -26,7 +27,7 @@ RUN npm run build
 
 EXPOSE 3000
 
-RUN npm install express
-RUN npm install aws-sdk
+# RUN npm install express
+# RUN npm install aws-sdk
 
-# CMD ["node", "server.js"]
+CMD ["node", "server.js"]
