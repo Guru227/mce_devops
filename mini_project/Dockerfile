@@ -2,23 +2,27 @@
 FROM node:14 AS build
 
 WORKDIR /app
-COPY client/package.json ./client/
+
+COPY . .
+RUN npm install
 WORKDIR /app/client
 RUN npm install
-COPY client/ ./
 RUN npm run build
 
-# Stage 2: Serve the built app with Node.js
-FROM node:14
+# COPY client/package.json ./client/
+# COPY client/ ./
 
-WORKDIR /app
-COPY server.js ./
-COPY package.json ./
-# COPY package-lock.json ./
-RUN npm install
+# # Stage 2: Serve the built app with Node.js
+# FROM node:14
 
-# Copy the built React app from Stage 1
-COPY --from=build /app/client/build ./client/build
+# WORKDIR /app
+# COPY server.js ./
+# COPY package.json ./
+# # COPY package-lock.json ./
+# RUN npm install
+
+# # Copy the built React app from Stage 1
+# COPY --from=build /app/client/build ./client/build
 
 EXPOSE 3000
 
