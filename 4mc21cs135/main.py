@@ -6,9 +6,9 @@ from division import divide
 def main():
     print("Simple Calculator Program")
     
-    a = 8
+    a = 10
     b = 6
-    #hello this is for my branch
+    
     print(f"Addition of {a} and {b}: {add(a, b)}")
     print(f"Subtraction of {a} and {b}: {subtract(a, b)}")
     print(f"Multiplication of {a} and {b}: {multiply(a, b)}")
